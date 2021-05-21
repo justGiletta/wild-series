@@ -22,7 +22,7 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", methods={"GET"}, requirements={"page"="\d+"}, name="list")
+     * @Route("/{id}", methods={"GET"}, requirements={"id"="\d+"}, name="list")
      */
     public function show(int $id): Response
     {
