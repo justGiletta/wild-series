@@ -3,6 +3,9 @@
 :root {
     --textfont : 'Space Mono', monospace;
     --titlefont : 'Shrikhand', cursive;
+    --primarycolor: black;
+    --secondarycolor: white;
+    --tertiarycolor: #F51F1F;
 }
 
 * {
@@ -11,17 +14,17 @@
   }
 
 body {
-    background-color: white;
-    color: black;
+    background-color: var(--secondarycolor);
+    color: var(--primarycolor);
     font-family: var(--textfont);
 }
 
 .bg-dark {
-    background-color: black !important;
-    color: white;
+    background-color: var(--primarycolor) !important;
+    color: var(--secondarycolor);
 }
 
 a {
-    color: white;
+    color: var(--secondarycolor);
     text-decoration: none;
 }
