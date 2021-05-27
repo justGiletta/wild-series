@@ -24,7 +24,12 @@ body {
     color: var(--secondarycolor);
 }
 
+.text-dark {
+    color: var(--primarycolor) !important;
+}
+
 a {
-    color: var(--secondarycolor);
+    color: var(--primarycolor);
     text-decoration: none;
 }
+
