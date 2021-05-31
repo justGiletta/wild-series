@@ -21,13 +21,12 @@
 			<p>Année :{{ season.year }}</p>
 			<p>Catégorie :
 				{{ season.description }}</p>
-			<a href="#">Liste des épisodes</a>
 		</div>
 	</div>
     {% for episode in episodes %}
 		<div class="media">
 			<div class="media-body">
-				<h1 class="mt-5">EPISODE {{ episode.number }}</h1>
+				<h2 class="mt-5"><a href="{{ path('program_episode_show', { 'programId': program.id , 'seasonId': season.id, 'episodeId': episode.id }) }}">EPISODE {{ episode.number }}</a></h2>
 				<p class="text-dark"> {{ episode.title }} </p>
 			</div>
 		</div>
