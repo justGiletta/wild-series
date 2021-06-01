@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Episode{% endblock %}
+
+{% block body %}
+    <a href="{{ path('episode_index') }}" class="mb-5">Back to list</a>
+    <h1 class="mt-5">ÉPISODE {{ episode.number }}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ episode.title }}</td>
+            </tr>
+            <tr>
+                <th>Synopsis</th>
+                <td>{{ episode.synopsis }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btn-group mt-5">
+		<div class="me-2 p-2 btn btn-outline-dark text-center">
+			<a href="{{ path('episode_edit', {'id': episode.id}) }}">Edit</a>
+		</div>
+		<div>
+			{{ include('episode/_delete_form.html.twig') }}
+		</div>
+	</div>
+
+
+{% endblock %}

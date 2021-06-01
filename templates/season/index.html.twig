@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Season index
+{% endblock %}
+
+{% block body %}
+	<h1>SAISONS INDEX</h1>
+	<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+		<p class="btn btn-outline-dark">
+			<a href="{{ path("season_new") }}">Ajouter une saison</a>
+		</p>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Série</th>
+				<th>Saison</th>
+				<th>Année</th>
+				<th>Description</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for season in seasons %}
+				<tr>
+					<td>
+						<h6>{{ season.program.title }}</h6>
+					</td>
+					<td>{{ season.number }}</td>
+					<td>{{ season.year }}</td>
+					<td>{{ season.description }}</td>
+					<td>
+						<div class="mt-2 p-2 btn btn-outline-dark text-center">
+							<a href="{{ path('season_show', {'id': season.id}) }}">show</a>
+						</div>
+						<div class="mt-2 p-2 btn btn-outline-dark text-center">
+							<a href="{{ path('season_edit', {'id': season.id}) }}">edit</a>
+						</div>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
+
