@@ -5,19 +5,31 @@
 {% endblock %}
 
 {% block body %}
-	{% for program in programs %}
-		<div class="media">
-			<img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
-			<div class="media-body">
-				<h1 class="mt-0"><a href="{{ path("program_show", { id: program.id }) }}">{{ program.title }}</a></h1>
-				<p>{{ program.summary }}</p>
-				<p>Catégorie :
-					{{ program.category.name }}</p>
-			</div>
+	<div class="my-5"><a href="{{ path('category_index') }}">
+		Retour à la liste des catégories
+	</a></div>
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+			{% for program in programs %}
+				<div class="col">
+					<div class="card">
+						<img class="card-img-top" src="{{program.poster}}" alt="{{ program.title }} poster">
+						<div class="card-body">
+							<h3 class="card-title">{{ loop.index }}/
+								{{ program.title }}</h3>
+							<p class="card-text">{{ program.summary }}</p>
+                            <div class="card-text mb-3">
+								<small class="text-muted">Catégorie :
+									{{ program.category.name }}</small>
+							</div>
+							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+								<p class="btn btn-outline-dark">
+									<a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
-	{% endfor %}
-	<a href="{{ path('program_index') }}">
-		Retour à la liste des programmes
-	</a>
 {% endblock %}
 

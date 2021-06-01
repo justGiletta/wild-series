@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	{{ form_start(form) }}
+		<h2>SÉRIE</h2>
+	   	{{ form_label(form.title, 'Titre', {'label_attr': {'class': 'my-3'}}) }}
+	    {{ form_widget(form.title) }}
+		{{ form_label(form.summary, 'Résumé', {'label_attr': {'class': 'my-3'}}) }}
+	    {{ form_widget(form.summary) }}
+		{{ form_label(form.poster, 'Affiche', {'label_attr': {'class': 'my-3'}}) }}
+	    {{ form_widget(form.poster) }}
+		{{ form_label(form.category, 'Catégorie', {'label_attr': {'class': 'my-3'}}) }}
+	    {{ form_widget(form.category) }}
+	    <input type='submit' value='Add program' class="mt-4 p-2 btn-danger">
+	{{ form_end(form) }}
+{% endblock %}

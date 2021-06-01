@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	{{ form_start(form) }}
+	    <h2>CATÉGORIES</h2>
+        {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'mb-2'}}) }}
+	    {{ form_widget(form.name) }}
+	    <input type='submit' value='Ajouter une catégorie' class="mt-4 p-2 btn-danger">
+	{{ form_end(form) }}
+{% endblock %}

@@ -1,18 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Categories {% endblock %}
+{% block title %}
+	Categories
+{% endblock %}
 
 {% block body %}
-<h1>Toutes les catégories de séries : </h1>
-    {% for category in categories %}
-        <div>
-            <h2>{{ loop.index }} / <a href="{{ path("category_show", { categoryName: category.name }) }}">{{ category.name }}</a></h2>
-        </div>
-    {% else %}
-        Aucune série trouvée.
-    {% endfor %}
-
-    <a href="{{ path('app_index') }}">
-        Retour à l'accueil
-    </a>
+	<div class="container">
+		<h1 class="my-5">Toutes les catégories de séries :
+		</h1>
+		{% for category in categories %}
+			<div class="my-5">
+				<h2>{{ loop.index }}
+					/
+					<a href="{{ path("category_show", { categoryName: category.name }) }}">{{ category.name }}</a>
+				</h2>
+			</div>
+		{% endfor %}
+		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			<p class="btn btn-outline-dark">
+				<a href="{{ path("category_new") }}">Ajouter une catégorie</a>
+			</p>
+		</div>
+	</div>
 {% endblock %}
+
