@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Actor{% endblock %}
+
+{% block body %}
+    <a href="{{ path('actor_index') }}" class="mb-5">Back to list</a>
+    <h1 class="mt-5">Edit Actor</h1>
+
+    {{ include('actor/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <div class="mt-2">
+    {{ include('actor/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

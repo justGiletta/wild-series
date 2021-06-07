@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    {{ form_start(form) }}
+    	{{ form_label(form.name, 'Nom', {'label_attr': {'class': 'my-3'}}) }}
+	    {{ form_widget(form.name) }}
+		{{ form_label(form.birthDate, 'Date de naissance', {'label_attr': {'class': 'my-3'}}) }}
+	    {{ form_widget(form.birthDate) }}
+		{{ form_label(form.programs, 'Séries', {'label_attr': {'class': 'my-3'}}) }}
+	    {{ form_widget(form.programs) }}
+
+    <button class="mt-5 me-2 p-2 btn btn-outline-dark text-center">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
