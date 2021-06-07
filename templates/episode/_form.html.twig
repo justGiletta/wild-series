@@ -1,11 +1,11 @@
 {{ form_start(form) }}
-    {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'my-3'}}) }}
+    	{{ form_label(form.title, 'Titre', {'label_attr': {'class': 'my-3'}}) }}
 	    {{ form_widget(form.title) }}
 		{{ form_label(form.number, 'Numéro', {'label_attr': {'class': 'my-3'}}) }}
 	    {{ form_widget(form.number) }}
 		{{ form_label(form.synopsis, 'Synopsis', {'label_attr': {'class': 'my-3'}}) }}
 	    {{ form_widget(form.synopsis) }}
 		{{ form_label(form.season, 'Saison', {'label_attr': {'class': 'my-3'}}) }}
-	    {{ form_widget(form.season ) }}
+	    {{ form_widget(form.season) }}
     <button class="mt-5 me-2 p-2 btn btn-outline-dark text-center">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
