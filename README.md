@@ -15,3 +15,5 @@ Quête 13_ CRUD :https://www.loom.com/share/c01693a247cf4a8fbe343b9d3480831b
 QUÊTE 14_ VALIDATION : https://www.loom.com/share/05874120b94e4788b0293cf9390e0c5a
 
 QUÊTE 15_ MANYTOMANY : https://www.loom.com/share/0917a50195da4a5ba40513c5f43a641d
+
+QUËTE 16_ ENTITYTYPE : https://www.loom.com/share/1dcdd266e52e4f078049cb703a1e62b2

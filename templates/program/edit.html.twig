@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Program
+{% endblock %}
+
+{% block body %}
+	<a href="{{ path('program_index') }}" class="mb-5">Back to list</a>
+	<h1 class="mt-5">Edit Program</h1>
+
+	{{ include('program/_form.html.twig', {'button_label': 'Update'}) }}
+		<div class="mt-2">
+			{{ include('program/_delete_form.html.twig') }}
+		</div>
+
+{% endblock %}
+

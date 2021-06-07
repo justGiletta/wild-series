@@ -45,6 +45,8 @@ class Season
      */
     private $episodes;
 
+    private $selector;
+
     public function __construct()
     {
         $this->episodes = new ArrayCollection();
@@ -131,5 +133,10 @@ class Season
         }
 
         return $this;
+    }
+
+    public function getSelector() : string
+    {
+    return $this->getProgram()->getTitle() .' - Saison ' .$this->getNumber();
     }
 }

@@ -15,6 +15,9 @@
 		{{ form_label(form.category, 'Catégorie', {'label_attr': {'class': 'my-3'}}) }}
 	    	{{ form_errors(form) }}
 		{{ form_widget(form.category) }}
+		{{ form_label(form.actors, 'Acteurs', {'label_attr': {'class': 'my-3'}}) }}
+	    	{{ form_errors(form) }}
+		{{ form_widget(form.actors) }}
 	    <input type='submit' value='Add program' class="mt-4 p-2 btn-danger">
 	{{ form_end(form) }}
 {% endblock %}
