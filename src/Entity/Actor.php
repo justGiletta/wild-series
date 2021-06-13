@@ -25,15 +25,14 @@ class Actor
     private $name;
 
     /**
-     * @ORM\Column(type="date")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $birthDate;
-
-    /**
      * @ORM\ManyToMany(targetEntity=Program::class, inversedBy="actors")
      */
     private $programs;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $birthDate;
 
     public function __construct()
     {
@@ -57,12 +56,12 @@ class Actor
         return $this;
     }
 
-    public function getBirthDate(): ?\DateTimeInterface
+    public function getbirthDate(): ?\DateTimeInterface
     {
         return $this->birthDate;
     }
 
-    public function setBirthDate(\DateTimeInterface $birthDate): self
+    public function setbirthDate(\DateTimeInterface $birthDate): self
     {
         $this->birthDate = $birthDate;
 

@@ -20,7 +20,7 @@
     </table>
     <div class="btn-group mt-5">
 		<div class="me-2 p-2 btn btn-outline-dark text-center">
-			<a href="{{ path('episode_edit', {'id': episode.id}) }}">Edit</a>
+			<a href="{{ path('episode_edit', {'slug': episode.slug}) }}">Edit</a>
 		</div>
 		<div>
 			{{ include('episode/_delete_form.html.twig') }}

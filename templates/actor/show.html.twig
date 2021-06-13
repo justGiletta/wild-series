@@ -19,7 +19,7 @@
             <tr>
                 <th>Séries</th>
                 {% for program in actor.programs %}
-                    <td><a href="{{ path('program_show', {'id': program.id}) }}">{{ program.title }}</a></td>
+                    <td><a href="{{ path('program_show', {'slug': program.slug}) }}">{{ program.title }}</a></td>
                 {% else %}
                     <td>/</td>
                 {% endfor %}

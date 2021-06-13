@@ -6,6 +6,7 @@ use App\Entity\Program;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+use App\Service\Slugify;
 
 class ProgramFixtures extends Fixture implements DependentFixtureInterface
 {
@@ -16,6 +17,14 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         'Scrubs',
         'American Horror Story',
     ];
+
+    private $input;
+
+    public function __construct(Slugify $input)
+    {
+        $this->input = $input;
+    }
+
     public function load(ObjectManager $manager)
     {
         foreach (self::PROGRAMS as $key => $programName){
@@ -23,6 +32,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             $program->setTitle($programName);
             $program->setPoster('http://placekitten.com/200/300?image=' .rand (0, 16));
             $program->setSummary('Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores itaque molestiae debitis neque ipsa, accusantium quod. Ab inventore molestiae distinctio dolorum repellat perspiciatis harum ratione porro? Sunt praesentium corporis nam!');
+            $program->setSlug($this->input->generate($program->getTitle()));
 
             for ($id=0; $id < 5; $id++) {
                 $program->setCategory($this->getReference('category_' . $id));

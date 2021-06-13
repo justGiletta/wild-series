@@ -27,8 +27,8 @@
                 <td>{{ episode.number }}</td>
                 <td>{{ episode.synopsis }}</td>
                 <td>
-                    <div class="mt-2 p-2 btn btn-outline-dark text-center"><a href="{{ path('episode_show', {'id': episode.id}) }}">show</a></div>
-                    <div class="mt-2 p-2 btn btn-outline-dark text-center"><a href="{{ path('episode_edit', {'id': episode.id}) }}">edit</a></div>
+                    <div class="mt-2 p-2 btn btn-outline-dark text-center"><a href="{{ path('episode_show', {'slug': episode.slug}) }}">show</a></div>
+                    <div class="mt-2 p-2 btn btn-outline-dark text-center"><a href="{{ path('episode_edit', {'slug': episode.slug}) }}">edit</a></div>
                 </td>
             </tr>
         {% else %}

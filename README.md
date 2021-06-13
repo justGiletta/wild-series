@@ -19,3 +19,5 @@ QUÊTE 15_ MANYTOMANY : https://www.loom.com/share/0917a50195da4a5ba40513c5f43a6
 QUÊTE 16_ ENTITYTYPE : https://www.loom.com/share/1dcdd266e52e4f078049cb703a1e62b2
 
 QUÊTE 17_ ADVANCED FIXTURES : https://www.loom.com/share/c634d8ea06e24eba8604bb58612b85d7
+
+QUÊTE 18_ SERVICES : https://www.loom.com/share/2605e8498bce42599563cafd9c13e87b

@@ -30,7 +30,7 @@
 					<h5 class="list-group-item">SAISON
 						{{ season.number }}
 						<p class="text-end">
-							<a href="{{ path('program_season_show', { 'programId': program.id , 'seasonId': season.id }) }}">Détail</a>
+							<a href="{{ path('program_season_show', { 'programSlug': program.slug , 'seasonId': season.id }) }}">Détail</a>
 						</p>
 					</h5>
 				</div>
@@ -42,7 +42,7 @@
 	</div>
 	<div class="btn-group mt-5">
 		<div class="me-2 p-2 btn btn-outline-dark text-center">
-			<a href="{{ path('program_edit', {'id': program.id}) }}">Edit</a>
+			<a href="{{ path('program_edit', {'slug': program.slug}) }}">Edit</a>
 		</div>
 		<div>
 			{{ include('program/_delete_form.html.twig') }}

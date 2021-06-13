@@ -26,7 +26,7 @@
     {% for episode in episodes %}
 		<div class="media">
 			<div class="media-body">
-				<h2 class="mt-5"><a href="{{ path('program_episode_show', { 'programId': program.id , 'seasonId': season.id, 'episodeId': episode.id }) }}">EPISODE {{ episode.number }}</a></h2>
+				<h2 class="mt-5"><a href="{{ path('program_episode_show', { 'programSlug': program.slug , 'seasonId': season.id, 'episodeSlug': episode.slug }) }}">EPISODE {{ episode.number }}</a></h2>
 				<p class="text-dark"> {{ episode.title }} </p>
 			</div>
 		</div>
