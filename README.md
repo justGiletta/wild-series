@@ -21,3 +21,5 @@ QUÊTE 16_ ENTITYTYPE : https://www.loom.com/share/1dcdd266e52e4f078049cb703a1e6
 QUÊTE 17_ ADVANCED FIXTURES : https://www.loom.com/share/c634d8ea06e24eba8604bb58612b85d7
 
 QUÊTE 18_ SERVICES : https://www.loom.com/share/2605e8498bce42599563cafd9c13e87b
+
+QUÊTE 19_ MAILER : https://www.loom.com/share/aef431b4a34742eba688539c2d341db8
