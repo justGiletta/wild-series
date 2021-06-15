@@ -17,7 +17,11 @@
 		</section>
 		<section class="container-fluid d-flex justify-content-end flex-row">
 			<a class="navbar-brand text-reset mt-5 me-5" href="#">MES SERIES</a>
-			<a class="navbar-brand text-reset mt-5" href="#">MON COMPTE</a>
+			{% if app.user %} 
+				<a class="navbar-brand text-reset mt-5" href="#">{{ app.user.email }}</a><a class="navbar-brand text-reset mt-5" href="{{ path("app_logout") }}">&#x274C;</a>
+			{% else %}
+				<a class="navbar-brand text-reset mt-5" href="{{ path("app_login") }}">MON COMPTE</a>
+			{% endif %}
 		</section>
 
 	</nav>

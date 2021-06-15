@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comment index{% endblock %}
+
+{% block body %}
+    <h1>Comment index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Comment</th>
+                <th>Show</th>
+                <th>Episode</th>
+                <th>Rate</th>
+                <th>Author</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.comment }}</td>
+                <td>{{ comment.episode.season.program.title }}</td>
+                <td>{{ comment.episode.title }}</td>
+                <td>{{ comment.rate }}</td>
+                <td>{{ comment.author.username }}</td>
+                <td>
+                    <a href="{{ path('program_episode_show', { 'programSlug': comment.episode.season.program.slug , 'seasonId': comment.episode.season.id, 'episodeSlug': comment.episode.slug }) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
