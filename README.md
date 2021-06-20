@@ -31,3 +31,5 @@ QUÊTE 21_ SECURITY : https://www.loom.com/share/65aef2528daf4fbf9f2b20332913e14
 QUÊTE 22_ REGISTRATION : https://www.loom.com/share/b6c4072b9541431884da7e48d8a4f35d
 
 QUÊTE 23_ REQUEST : https://www.loom.com/share/52075b95b7ca4edf8d4d127b2cbacf30
+
+QUÊTE 24_ SESSIONS : https://www.loom.com/share/63d0c1d050374c089392256f7665dc95
