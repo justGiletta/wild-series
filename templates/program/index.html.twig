@@ -7,11 +7,19 @@
 {% block body %}
 	<div class="container">
 		<h1 class="my-5">TOUTES LES SERIES</h1>
+		<div class="row d-flex justify-content-end m-auto">
+			{{ form_start(searchForm) }}
+				{{ form_row(searchForm.search) }}
+				<button type="submit" class="my-4 p-2 btn btn-outline-dark text-center">Search</button>
+			{{ form_end(searchForm) }}
+		</div>
+		{% if is_granted("ROLE_ADMIN") %}
 		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 			<p class="btn btn-outline-dark">
 				<a href="{{ path("program_new") }}">Ajouter une série</a>
 			</p>
 		</div>
+		 {% endif %}
 		<div class="row row-cols-1 row-cols-md-3 g-4">
 			{% for program in programs %}
 				<div class="col">
