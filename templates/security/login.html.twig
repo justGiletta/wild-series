@@ -8,12 +8,6 @@
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label class="my-4" for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
@@ -39,4 +33,5 @@
         Sign in
     </button>
 </form>
+<h5 class="my-3 text-center"><a href="{{ path('app_register')}}">Je me crée un compte</a></h5>
 {% endblock %}
