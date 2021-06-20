@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
@@ -52,6 +53,7 @@ class ProgramController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $slug = $slugify->generate($program->getTitle());
             $program->setSlug($slug);
+            $program->setOwner($this->getUser());
             $entityManager->persist($program);
             $entityManager->flush();
 
@@ -97,6 +99,10 @@ class ProgramController extends AbstractController
      */
     public function edit(Request $request, Program $program): Response
     {
+        if (!($this->getUser() == $program->getOwner())) {
+            throw new AccessDeniedException('Only the owner can edit the program!');
+        }
+
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
 
@@ -128,7 +134,7 @@ class ProgramController extends AbstractController
 
 
     /**
-     * @Route("/{programSlug}/seasons/{seasonId}", methods={"GET"}, requirements={"programIdid"="\d+"}, name="season_show")
+     * @Route("/{programSlug}/seasons/{seasonId}", methods={"GET"}, requirements={"programId"="\d+"}, name="season_show")
      * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"programSlug": "slug"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
      * @return Response

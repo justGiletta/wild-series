@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-	<a href="{{ path('program_index') }}">
+	<a href="{{ path('program_season_show', { 'programSlug': program.slug , 'seasonId': season.id }) }}">
 		Retour à la liste des programmes
 	</a>
 	<div class="media mt-5">
@@ -28,6 +28,9 @@
 		<h4 class"mt-5">{{comment.author.username}}</h4>
 		<p>{{comment.comment}}</p>
 		<p>RATE : {{comment.rate}}</p>
+		{% if is_granted("ROLE_ADMIN") or app.user == comment.author %}
+        	{{ include('comment/_delete_form.html.twig') }}
+		{% endif %}
 	</div>
 		{% endfor %}
 
@@ -35,4 +38,5 @@
 	<h5 class="mt-5">Create new Comment</h5>
         {{ include('comment/_form.html.twig') }}
 	{% endif %}
+
 {% endblock %}

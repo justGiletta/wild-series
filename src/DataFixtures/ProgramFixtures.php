@@ -33,13 +33,11 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             $program->setPoster('http://placekitten.com/200/300?image=' .rand (0, 16));
             $program->setSummary('Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores itaque molestiae debitis neque ipsa, accusantium quod. Ab inventore molestiae distinctio dolorum repellat perspiciatis harum ratione porro? Sunt praesentium corporis nam!');
             $program->setSlug($this->input->generate($program->getTitle()));
-
-            for ($id=0; $id < 5; $id++) {
-                $program->setCategory($this->getReference('category_' . $id));
-            }
+            $program->setCategory($this->getReference('category_' .rand(0,4)));
             for ($i=0; $i < count(ActorFixtures::ACTORS); $i++) {
                 $program->addActor($this->getReference('actor_' . $i));
             }
+            $program->setOwner($this->getReference('user'));
             $manager->persist($program);
             $this->addReference('program_' . $key, $program);
 
