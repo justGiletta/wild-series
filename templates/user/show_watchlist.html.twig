@@ -21,7 +21,7 @@
 									{{ program.category.name }}</small>
 							</div>
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-								<a class="ms-4 p-2 text-end" href="{{ path('program_watchlist', {id: program.id})}}">
+								<a id="watchlist" class="ms-4 p-2 text-end" href="{{ path('program_watchlist', {id: program.id})}}">
 									<i class="bi {{ app.user.isInWatchlist(program) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
 								</a>
 								<p class="btn btn-outline-dark">

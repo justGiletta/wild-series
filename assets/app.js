@@ -11,4 +11,24 @@ import './styles/app.scss';
 import './bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-console.log('Hello Webpack Encore !')
+document.querySelector('#watchlist').addEventListener('click', addToWatchList)
+
+function addToWatchList(event) {
+    event.preventDefault();
+    let watchlistLink = event.currentTarget;
+    let link = watchlistLink.href;
+
+    fetch(link)
+        .then(res => res.json())
+        .then(function(res) {
+            let watchlistIcon = watchlistLink.firstElementChild ;
+            if (res.isInWatchlist) {
+                watchlistIcon.classList.remove('bi-heart');
+                watchlistIcon.classList.add('bi-heart-fill');
+            } else {
+                watchlistIcon.classList.remove('bi-heart-fill');
+                watchlistIcon.classList.add('bi-heart');
+            }
+        });
+
+}
