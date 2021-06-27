@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Wild Series
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="my-5">MA SÉLECTION DE SERIES</h1>
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			{% for program in watchlist %}
+				<div class="col">
+					<div class="card">
+						<img class="card-img-top" src="{{program.poster}}" alt="{{ program.title }} poster">
+						<div class="card-body">
+							<h3 class="card-title">{{ loop.index }}/
+								{{ program.title }}</h3>
+							<p class="card-text">{{ program.summary }}</p>
+							<div class="card-text mb-3">
+								<small class="text-muted">Catégorie :
+									{{ program.category.name }}</small>
+							</div>
+							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+								<a class="ms-4 p-2 text-end" href="{{ path('program_watchlist', {id: program.id})}}">
+									<i class="bi {{ app.user.isInWatchlist(program) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+								</a>
+								<p class="btn btn-outline-dark">
+									<a href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
@@ -93,5 +94,18 @@ class UserController extends AbstractController
         }
 
         return $this->redirectToRoute('app_logout');
+    }
+
+    /**
+     * @Route("/my-profile/{id}/watchlist", name="user_show_watchlist", methods={"GET"})
+     */
+    public function showWatchlist(User $user): Response
+    {
+        $watchlist = $user->getWatchlist();
+
+        return $this->render('user/show_watchlist.html.twig', [
+            'watchlist' => $watchlist,
+            'user' => $user,
+        ]);
     }
 }
