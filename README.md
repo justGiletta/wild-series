@@ -35,3 +35,6 @@ QUÊTE 23_ REQUEST : https://www.loom.com/share/52075b95b7ca4edf8d4d127b2cbacf30
 QUÊTE 24_ SESSIONS : https://www.loom.com/share/63d0c1d050374c089392256f7665dc95
 
 QUÊTE 25.1 : https://www.loom.com/share/dea6241dffde453fbfbe8171042eb9ec
+
+QUÊTE 25.2 : https://www.loom.com/share/cd2d6e06389f442fb333a1e3d95b048f
+
