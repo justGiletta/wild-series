@@ -7,6 +7,7 @@ navbar:
   shows: SERIES
   actors: ACTORS
   watchlist: FAVORIS
+  see_all: See all
 index:
   title: OUR LATEST SERIES
   button_see: See

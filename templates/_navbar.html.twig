@@ -5,7 +5,15 @@
 			<section class="container-fluid d-flex justify-content-start flex-column s-none">
 				<img src="{{ asset('build/images/Search-512.png') }}" width="25" height="25" class="ms-2" alt="search logo">
 				<section class="container-fluid d-flex justify-content-start flex-row">
-					<a class="navbar-brand mt-4 text-reset me-5" href="{{ path("category_index") }}">{{ 'navbar.categories'|trans }}</a>
+					<div class="dropdown">
+						<a class="navbar-brand mt-4 text-reset me-5 dropdown-toggle" type="button" id="dropdownMenuButton" href="{{ path("category_index") }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							{{ 'navbar.categories'|trans }}
+						</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<li><a href="{{path("category_index") }}">{{ 'navbar.see_all'|trans }}</a></li>
+							{{ render(controller('App\\Controller\\HomeController::navbarTop')) }}
+						</div>
+					</div>
 					<a class="navbar-brand mt-4 text-reset me-5" href="{{ path("program_index") }}">{{ 'navbar.shows'|trans }}</a>
 					<a class="navbar-brand mt-4 text-reset" href="{{ path("actor_index") }}">{{ 'navbar.actors'|trans }}</a>
 				</section>
