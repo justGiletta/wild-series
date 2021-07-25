@@ -1,0 +1,15 @@
+hello_username: Salut %username%
+account:
+  login: CONNEXION
+  my_account: MON COMPTE
+navbar:
+  categories: CATÉGORIES
+  shows: SÉRIES
+  actors: ACTEURS
+  watchlist: FAVORIS
+index:
+  title: NOS DERNIÈRES SÉRIES
+  button_see: Voir
+categories:
+  title: TOUTES LES CATEGORIES DE SERIES
+  button_add: Ajouter

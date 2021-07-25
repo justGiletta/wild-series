@@ -1,31 +1,41 @@
+  
 <header class="border-bottom border-dark sticky-top">
 	<nav class="navbar navbar-expand bg-dark position relative">
 		<div class="container justify-content-start d-flex">
 			<section class="container-fluid d-flex justify-content-start flex-column s-none">
 				<img src="{{ asset('build/images/Search-512.png') }}" width="25" height="25" class="ms-2" alt="search logo">
 				<section class="container-fluid d-flex justify-content-start flex-row">
-					<a class="navbar-brand mt-4 text-reset me-5" href="{{ path("category_index") }}">CATEGORIES</a>
-					<a class="navbar-brand mt-4 text-reset me-5" href="{{ path("program_index") }}">SERIES</a>
-					<a class="navbar-brand mt-4 text-reset" href="{{ path("actor_index") }}">ACTEURS</a>
+					<a class="navbar-brand mt-4 text-reset me-5" href="{{ path("category_index") }}">{{ 'navbar.categories'|trans }}</a>
+					<a class="navbar-brand mt-4 text-reset me-5" href="{{ path("program_index") }}">{{ 'navbar.shows'|trans }}</a>
+					<a class="navbar-brand mt-4 text-reset" href="{{ path("actor_index") }}">{{ 'navbar.actors'|trans }}</a>
 				</section>
 			</div>
 		</section>
 		<section class="container-fluid d-flex justify-content-center">
-			<div class="container-fluid d-flex justify-content-center">
-				<a href="/"><img src="{{ asset('build/images/LogoWS.png') }}" width="130" height="130" alt="WILD SERIES logo"></a>
+			<div class="container-fluid d-flex flex-column align-items-center">
+				<a href="{{ path('app_index')}}"><img src="{{ asset('build/images/LogoWS.png') }}" width="130" height="130" alt="WILD SERIES logo"></a>
+				<div class="container-fluid d-flex justify-content-center">
+					<a class="navbar-brand text-reset" class="nav-link" href="/fr">FR</a>
+					<a class="navbar-brand text-reset" class="nav-link" href="/en">EN</a>
+				</div>
 			</div>
 		</section>
-		<section class="container-fluid d-flex justify-content-end flex-row">
+		<section class="container-fluid d-flex justify-content-end flex-column">
 			{% if app.user %}
-			<a class="navbar-brand text-reset mt-5 me-5" href="{{ path('user_show_watchlist', { 'id': app.user.id })}}">WATCHLIST</a>
+			<div class="container-fluid d-flex justify-content-center flex-row">
+				{% trans with {'%username%': app.user.email} %}
+				hello_username
+				{% endtrans %} !
+			</div>
+			<div class="container-fluid d-flex justify-content-end flex-row">
+			<a class="navbar-brand text-reset mt-5 me-5" href="{{ path('user_show_watchlist', { 'id': app.user.id })}}">{{ 'navbar.watchlist'|trans }}</a>
 			{% endif %}
 			{% if app.user %}
-				<a class="navbar-brand text-reset mt-5" href="{{ path('user_show', { 'id': app.user.id })}}">MON COMPTE</a><a class="navbar-brand text-reset mt-5" href="{{ path("app_logout") }}">&#x274C;</a>
+				<a class="navbar-brand text-reset mt-5" href="{{ path('user_show', { 'id': app.user.id })}}">{{ 'account.my_account'|trans }}</a><a class="navbar-brand text-reset mt-5" href="{{ path("app_logout") }}">&#x274C;</a>
 			{% else %}
-				<a class="navbar-brand text-reset mt-5" href="{{ path("app_login") }}">CONNEXION</a>
+				<a class="navbar-brand text-reset mt-5" href="{{ path("app_login") }}">{{ 'account.login'|trans }}</a>
 			{% endif %}
+			</div>
 		</section>
-
 	</nav>
 </header>
-

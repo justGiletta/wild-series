@@ -6,7 +6,7 @@
 
 {% block body %}
 	<div class="container">
-		<h1 class="my-5">Toutes les catégories de séries :
+		<h1 class="my-5">{{ 'categories.title'|trans }} :
 		</h1>
 		{% for category in categories %}
 			<div class="my-5">
@@ -18,7 +18,7 @@
 		{% endfor %}
 		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 			<p class="btn btn-outline-dark">
-				<a href="{{ path("category_new") }}">Ajouter une catégorie</a>
+				<a href="{{ path("category_new") }}">{{ 'categories.button_add'|trans }}</a>
 			</p>
 		</div>
 	</div>

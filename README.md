@@ -38,3 +38,5 @@ QUÊTE 25.1 : https://www.loom.com/share/dea6241dffde453fbfbe8171042eb9ec
 
 QUÊTE 25.2 : https://www.loom.com/share/cd2d6e06389f442fb333a1e3d95b048f
 
+QUÊTE 26 : https://www.loom.com/share/50ce6388e824443eaf6906aee1e68da1
+

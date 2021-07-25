@@ -6,7 +6,7 @@
 {% block body %}
 
 	<div class="container-fluid">
-		<h1 class="my-5">NOS DERNIÈRES SERIES</h1>
+		<h1 class="my-5">{{ 'index.title'|trans }}</h1>
 		<div class="row row-cols-1 row-cols-md-3 g-4">
 			{% for program in programs | reverse |slice(0, 3) %}
 				<div class="col">
@@ -22,7 +22,7 @@
 							</div>
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 								<p class="btn btn-outline-dark">
-									<a href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+									<a href="{{ path("program_show", { slug: program.slug }) }}">{{ 'index.button_see'|trans }}</a>
 								</p>
 							</div>
 						</div>
