@@ -7,7 +7,7 @@
 {% block body %}
 	<div class="row row-cols-3 g-1 mt-5">
 		<div class="card me-5">
-			<img src="{{program.poster}}" alt="{{ program.title }} poster" class="card-img-top-fluid">
+			<img src="{{ vich_uploader_asset(program) }}" alt="{{ program.title }} poster" class="card-img-top-fluid">
 			<div class="card-body">
 				<h5 class="card-title">{{ program.title }}</h5>
 				<p class="card-text">{{ program.summary }}</p>
