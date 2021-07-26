@@ -37,3 +37,9 @@ QUÊTE 24_ SESSIONS : https://www.loom.com/share/63d0c1d050374c089392256f7665dc9
 QUÊTE 25.1 : https://www.loom.com/share/dea6241dffde453fbfbe8171042eb9ec
 
 QUÊTE 25.2 : https://www.loom.com/share/cd2d6e06389f442fb333a1e3d95b048f
+
+QUÊTE 26 : https://www.loom.com/share/50ce6388e824443eaf6906aee1e68da1
+
+QUÊTE 27 : https://www.loom.com/share/7a8679b173de47d389980c799bb7aad1
+
+QUÊTE 28 : https://www.loom.com/share/4f6cc4cdf8b94fbda9cc3c5fcebfd7f2
