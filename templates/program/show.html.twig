@@ -22,9 +22,11 @@
 					{% endfor %}
 				</ul>
 			</div>
+			{% if app.user %}
 			<a id="watchlist" class="ms-4 p-2 text-end" href="{{ path('program_watchlist', {id: program.id})}}">
 				<i class="bi {{ app.user.isInWatchlist(program) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
 			</a>
+			{% endif %}
 		</div>
 
 		<div class="card">
